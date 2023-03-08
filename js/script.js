@@ -3,7 +3,7 @@ let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 
 
 let listarFilmes = async(filmes) => {
-    let listaFilmes = await document.querySelector("lista-filmes");
+    let listaFilmes = await document.querySelector("#lista-filmes");
     listaFilmes.innerHTML = "";
     console.log(listaFilmes);
     if(filmes.length > 0) {
