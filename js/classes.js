@@ -37,8 +37,8 @@ class Filme
         imgCartaz.setAttribute("src", this.cartaz);
         let cardBody = document.createElement("div");
         cardBody.setAttribute("class", "card-body");
-        let hCardTitle=document.createElement("h5");
-        hCardTitle.setAttribute("class", "card-title");
+        let hCardtitle=document.createElement("h5");
+        hCardtitle.setAttribute("class", "card-title");
         let divDetalhes = document.createElement("div");
         divDetalhes.setAttribute("style", "display:flex; justify-content:space-aroud;");
         let divGenero = document.createElement("div");
@@ -56,7 +56,7 @@ class Filme
         divDetalhes.appendChild(divClassificacao);
         card.appendChild(imgCartaz);
         card.appendChild(cardBody);
-        cardBody.appendChild(hCardTitle);
+        cardBody.appendChild(hCardtitle);
         cardBody.appendChild(divDetalhes);
         return card;
     }
