@@ -1,19 +1,6 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 
-
-let listarFilmes = async(filmes) => {
-    let listaFilmes = await document.querySelector("#lista-filmes");
-    listaFilmes.innerHTML = "";
-    console.log(listaFilmes);
-    if(filmes.length > 0) {
-        filmes.forEach(async(filme) => {
-            listaFilmes.appendChild(await filme.getCard());
-        });
-    }
-}
-
-
 btnBuscarFilme.onclick = async () => {
     if(inputBuscarFilme.value.length > 0){
         let filmes = new Array();
@@ -29,7 +16,7 @@ btnBuscarFilme.onclick = async () => {
                 item.Year,
                 null,
                 null,
-                item.poster,
+                item.Poster,
                 null,
                 null,
                 null,
@@ -44,4 +31,16 @@ btnBuscarFilme.onclick = async () => {
     }
     return false;
 }
+
+let listarFilmes = async(filmes) => {
+    let listaFilmes = await document.querySelector("#lista-filmes");
+    listaFilmes.innerHTML = "";
+    console.log(listaFilmes);
+    if(filmes.length > 0) {
+        filmes.forEach(async(filme) => {
+            listaFilmes.appendChild(await filme.getCard());
+        });
+    }
+}
+
 
