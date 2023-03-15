@@ -20,5 +20,11 @@
     display: none;
     width: 500px;
     height: 500px;
-    background-color: black;
+    position: absolute;
+    background-color: white;
+    top: 10vw;
+    left : 35vw;
+    border-radius: 3vw;
+    border: 1px solid black;
+    padding: 2vw;
 }

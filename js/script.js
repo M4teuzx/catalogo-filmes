@@ -34,13 +34,12 @@ btnBuscarFilme.onclick = async () => {
     return false;
 }
 
-
 let detalhesFilme = async (id) => {
     fetch("http://www.omdbapi.com/?apikey=ba316868&i="+id)
     .then ((resp) => resp.json())
     .then ((resp)=> {
         console.log(resp);
-        alert("titulo: " + resp.Title + "\nano: " + resp.Year + "\ngenero:  " + resp.Genre + "\ndiretor:  " + resp.Director + "\natores:  " + resp.Actors + "\nplot:  " + resp.Plot + "\nrated: " + resp.Rated + "\nimdb:  " + resp.imdbRating)      
+        mostrarFilme.innerHTML = `titulo: ${resp.Title}ano: ${resp.Year}\ngenero:  ${resp.Genre}\ndiretor:  ${resp.Director}\natores:  ${resp.Actors}\nplot:  ${resp.Plot}\nrated: ${resp.Rated}\nimdb:  ${resp.imdbRating}`;
     });
 }  
 
