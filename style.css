@@ -27,4 +27,17 @@
     border-radius: 3vw;
     border: 1px solid black;
     padding: 2vw;
+    z-index: 2;
+}
+
+#btnfecha{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+    
 }

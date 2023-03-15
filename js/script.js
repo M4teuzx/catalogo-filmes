@@ -1,7 +1,12 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 let mostrarFilme = document.getElementById("mostrar-filme");
+let btnFechar = document.getElementById("btnfecha");
 
+btnFechar.onclick = () => {
+    mostrarFilme.style.display = "none";
+    btnFechar.style.display = "none";
+}
 
 btnBuscarFilme.onclick = async () => {
     if(inputBuscarFilme.value.length > 0){
@@ -51,6 +56,7 @@ let listarFilmes = async(filmes) => {
             listaFilmes.appendChild(await filme.getCard());
             filme.getBtnDetalhes().onclick=()=>{
                 mostrarFilme.style.display= "block";
+                btnFechar.style.display= "block";
                 detalhesFilme(filme.id);
                 console.log(filme.id)
             }
