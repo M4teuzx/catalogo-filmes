@@ -4,3 +4,20 @@
     flex-wrap: wrap;
     padding:2rem;
 }
+
+.card-img-topz{
+    width: 250px;
+    height: 400px;
+}
+
+.card{
+    margin: 1rem;
+    width: 250px;
+    height: 500px;
+}
+
+.card button{
+    font-size: 1em;
+    background-color: black;
+    color: aliceblue;
+}
