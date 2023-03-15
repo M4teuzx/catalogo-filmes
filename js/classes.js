@@ -27,9 +27,11 @@ class Filme
         this.direcao=direcao;
         this.elenco=elenco;
         this.classificacao=classificacao;
-        this.avaliacao=avaliacao;   
+        this.avaliacao=avaliacao;
+        this.btnDetalhes=null;
     }
-    getCard = async () => {
+
+    getCard = () => {
         let card = document.createElement("div");
         card.setAttribute("class", "card");
         let imgCartaz= document.createElement("img");
@@ -39,14 +41,17 @@ class Filme
         cardBody.setAttribute("class", "card-body");
         let hCardTitle=document.createElement("h5");
         hCardTitle.setAttribute("class", "card-title");
-        let divDetalhes= document.createElement("div");
+        let divDetalhes=document.createElement("div");
         divDetalhes.setAttribute("style", "display:flex; justify-content:space-aroud;");
-        let divGenero= document. createElement("div");
+        let divGenero= document.createElement("div");
         divGenero.setAttribute ("style", "flex-grow:1;");
+        divGenero.setAttribute("class", "card-genre");
         let divAnoProducao= document.createElement("div");
         divAnoProducao.setAttribute("style", "flex-grow:1;");
+        divAnoProducao.setAttribute("class", "card-year");
         let divClassificacao= document.createElement("div");
         divClassificacao.setAttribute("style", "flex-grow:1;");
+        divClassificacao.setAttribute("class", "card-classificacao");
         hCardTitle.appendChild (document.createTextNode(this.titulo))
         divGenero.appendChild(document.createTextNode(this.genero))
         divAnoProducao.appendChild(document.createTextNode(this.ano));
@@ -59,14 +64,22 @@ class Filme
         cardBody.appendChild(hCardTitle);
         cardBody.appendChild(divDetalhes);
 
-        let btnDetalhes = document.createElement('button')
-        btnDetalhes.appendChild(document.createTextNode("Detalhes"))
-        btnDetalhes.setAttribute("id", "this.id")
-        btnDetalhes.setAttribute("class", "btn-detalhes")
-        btnDetalhes.querySelectorAll("btn-detalhes")
-        cardBody.appendChild(btnDetalhes)
-
+        this.setBtnDetalhes();
+        cardBody.appendChild(this.getBtnDetalhes());
+        
         return card;
+    }
+    
+    setBtnDetalhes=()=>{
+        this.btnDetalhes = document.createElement('button');
+        this.btnDetalhes.appendChild(document.createTextNode ("Detalhes"));
+        this.btnDetalhes.setAttribute("id", this.id);
+        this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
+        
+    }
+
+    getBtnDetalhes=()=>{
+        return this.btnDetalhes
     }
 
 }

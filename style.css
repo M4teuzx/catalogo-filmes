@@ -16,8 +16,9 @@
     height: 500px;
 }
 
-.card button{
-    font-size: 1em;
+#mostrar-filme{
+    display: none;
+    width: 500px;
+    height: 500px;
     background-color: black;
-    color: aliceblue;
 }
