@@ -2,10 +2,13 @@ let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 let mostrarFilme = document.getElementById("mostrar-filme");
 let btnFechar = document.getElementById("btnfecha");
+let imgCartaz= document.createElement("img");
+let card = document.querySelector("#lista-filmes");
 
 btnFechar.onclick = () => {
     mostrarFilme.style.display = "none";
     btnFechar.style.display = "none";
+    card.style.display="flex";
 }
 
 btnBuscarFilme.onclick = async () => {
@@ -43,8 +46,14 @@ let detalhesFilme = async (id) => {
     fetch("http://www.omdbapi.com/?apikey=ba316868&i="+id)
     .then ((resp) => resp.json())
     .then ((resp)=> {
+        card.style.display="none";
         console.log(resp);
         mostrarFilme.innerHTML = `titulo: ${resp.Title}ano: ${resp.Year}\ngenero:  ${resp.Genre}\ndiretor:  ${resp.Director}\natores:  ${resp.Actors}\nplot:  ${resp.Plot}\nrated: ${resp.Rated}\nimdb:  ${resp.imdbRating}`;
+        imgCartaz.setAttribute("class", "poster-detalhes");
+        imgCartaz.setAttribute("src",resp.Poster);
+        mostrarFilme.appendChild(imgCartaz);
+
+
     });
 }  
 
