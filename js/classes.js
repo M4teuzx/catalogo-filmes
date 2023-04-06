@@ -67,6 +67,7 @@ class Filme
         this.setBtnDetalhes();
         cardBody.appendChild(this.getBtnDetalhes());
         
+        
         return card;
     }
     
@@ -75,11 +76,21 @@ class Filme
         this.btnDetalhes.appendChild(document.createTextNode ("Detalhes"));
         this.btnDetalhes.setAttribute("id", this.id);
         this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
-        
     }
 
     getBtnDetalhes=()=>{
         return this.btnDetalhes
     }
 
+    setBtnFavoritos=()=>{
+        this.btnFavoritos = document.createElement('button');
+        this.btnFavoritos.appendChild(document.createTextNode ("Favoritos"));
+        this.btnFavoritos.setAttribute("id", this.id);
+        this.btnFavoritos.setAttribute("class", "btnFavoritosFilme");
+    }       
+
+
+    getBtnFavoritos=()=>{
+        return this.btnFavoritos
+    }
 }
